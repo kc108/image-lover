@@ -112,7 +112,7 @@ router.get("/images", isAuthorized, async (req, res) => {
     const user = await User.findOne({ username: req.user.username })
     // render template passing it list of goals
     res.render("images", {
-        images: user.images,
+        images: user.images
     })
 })
 
@@ -121,7 +121,7 @@ router.post("/images", isAuthorized, async (req, res) => {
     // fetch up to date user 
     const user = await User.findOne({ username: req.user.username })
     // push new image and save
-    user.image.push(req.body)
+    user.images.push(req.body)
     await user.save()
     // redirect back to goals index
     res.redirect("/images")

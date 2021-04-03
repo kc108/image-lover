@@ -10,7 +10,7 @@ const imageSchema = new Schema({
 const userSchema = new Schema({
     username: { type: String, unique: true, required: true }, 
     password: { type: String, required: true },
-    users: [imageSchema]
+    images: [imageSchema]
 }) 
 
 // The User Model
