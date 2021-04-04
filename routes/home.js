@@ -138,6 +138,21 @@ router.get("/images/:id/edit", isAuthorized, async (req, res) => {
     res.render("edit", { image })
 })
 
+// Update Image Router
+router.put("/images/:id", isAuthorized, async (req, res) => {
+    // fetch user
+    const user = await User.findOne({ username: req.user.username })
+    // find the image that matches the id
+    const image = user.images.find(image => (image._id.toString() === req.params.id))
+    console.log(image)
+    // modify the image
+    Object.assign(image, req.body)
+    //save the user
+    await user.save()
+    // redirect to /images
+    res.redirect("/images")
+})
+
 ///////////////////////////////
 // Export Router
 ////////////////////////////////
