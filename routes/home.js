@@ -127,6 +127,17 @@ router.post("/images", isAuthorized, async (req, res) => {
     res.redirect("/images")
 })
 
+// Edit Image Router
+router.get("/images/:id/edit", isAuthorized, async (req, res) => {
+    // fetch user
+    const user = await User.findOne({ username: req.user.username })
+    // find the image that matches the id
+    const image = user.images.find(image => (image._id.toString() === req.params.id))
+    console.log(image)
+    // render the edit page
+    res.render("edit", { image })
+})
+
 ///////////////////////////////
 // Export Router
 ////////////////////////////////

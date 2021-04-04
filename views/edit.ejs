@@ -10,16 +10,14 @@
       <!-- *********DISPLAY OUR IMAGES********* -->
       <h1 class="title">My Images</h1>
       <a href="/auth/logout"><button class="button">Logout</button></a>
-      <% for (image of images) { %>
-      <a href="/images/<%= image._id %>/edit"><img src="<%= image.url %>" alt="image" /></a>
+      <img src="<%= image.url %>" alt="image" />
 
-      <% } %>
-
-      <!-- **********NEW IMAGES FORM**************** -->
-      <form action="/images" method="POST">
-        <input type="text" placeholder="new image" name="url" />
-        <input type="submit" value="add image" />
+    <!-- form to edit -->
+    <form action="/images/<%= image._id %>?_method=PUT" method="POST">
+        <input type="text" placeholder="new image" name="url" value="<%= image.url %>" />
+        <input type="submit" value="update image" />
       </form>
+
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("partials/footer") %>
