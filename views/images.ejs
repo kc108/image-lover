@@ -8,7 +8,7 @@
     <%- include("partials/header") %>
     <main>
       <!-- *********DISPLAY OUR IMAGES********* -->
-      <h1 class="title">My Images</h1>
+      <h1 class="title">A Place to Store your Images</h1>
       <a href="/auth/logout"><button class="button">Logout</button></a>
       <% for (image of images) { %>
       <a href="/images/<%= image._id %>/edit"><img src="<%= image.url %>" alt="image" /></a>
