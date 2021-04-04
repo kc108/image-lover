@@ -153,6 +153,21 @@ router.put("/images/:id", isAuthorized, async (req, res) => {
     res.redirect("/images")
 })
 
+// Delete Image Router
+router.delete("/images/:id", isAuthorized, async (req, res) => {
+    // fetch user
+    const user = await User.findOne({ username: req.user.username })
+    // find the image that matches the id
+    const index = user.images.findIndex(image => (image._id.toString() === req.params.id))
+    console.log(index)
+    // use array splice function to delete index
+    user.images.splice(index, 1)
+    //save the user
+    await user.save()
+    // redirect to /images
+    res.redirect("/images")
+})
+
 ///////////////////////////////
 // Export Router
 ////////////////////////////////
