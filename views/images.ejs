@@ -11,12 +11,12 @@
       <h1 class="title">My Images</h1>
       <a href="/auth/logout"><button class="button">Logout</button></a>
       <% for (image of images) { %>
-      <h2 class="subtitle is-3"><%= image.url %></h2>
+      <img src="<%= image.url %>" alt="image" />
       <% } %>
 
       <!-- **********NEW IMAGES FORM**************** -->
       <form action="/images" method="POST">
-        <input type="text" placeholder="new image" name="text" />
+        <input type="text" placeholder="new image" name="url" />
         <input type="submit" value="add image" />
       </form>
     </main>
