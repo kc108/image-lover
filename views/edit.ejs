@@ -8,21 +8,24 @@
     <%- include("partials/header") %>
     <main>
       <!-- *********DISPLAY OUR IMAGES********* -->
-      <h1 class="title">My Images</h1>
+      <h1 class="title is-6 subtitle">My Images</h1>
       <a href="/auth/logout"><button class="button">Logout</button></a>
       <img src="<%= image.url %>" alt="image" />
 
     <!-- form to edit -->
+    <div class="edit-images">
     <form action="/images/<%= image._id %>?_method=PUT" method="POST">
         <input type="text" placeholder="new image" name="url" value="<%= image.url %>" />
         <input type="submit" value="update image" />
       </form>
+    </div>
 
     <!-- form to delete -->
+    <div class="delete-images">
     <form action="/images/<%= image._id %>?_method=DELETE" method="POST">
         <input type="submit" value="delete image" />
       </form>
-
+    </div>
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("partials/footer") %>

@@ -16,10 +16,12 @@
       <% } %>
 
       <!-- **********NEW IMAGES FORM**************** -->
+      <div class="add-new-images">
       <form action="/images" method="POST">
         <input type="text" placeholder="new image" name="url" />
         <input type="submit" value="add image" />
       </form>
+      </div>
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("partials/footer") %>

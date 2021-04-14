@@ -1,0 +1,54 @@
+header.subtitle, footer.subtitle {
+    text-align: center;
+}
+
+h1.title {
+    text-align: center;
+}
+
+h1.user-login {
+    text-align: center;
+}
+
+h1.user-signup {
+    text-align: center;
+}
+
+div.login-center {
+    text-align: center;
+}
+
+div.signup-center {
+    text-align: center;
+}
+
+div.edit-images {
+    text-align: center;
+}
+
+div.add-new-images {
+    text-align: center;
+}
+
+div.delete-images {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+button.button.main {
+    margin: 0 auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 50x;
+    border: 3px solid black;
+}
+
+img.tag-image {
+    display: block;
+    margin: auto;
+    margin-right: auto;
+}

@@ -136,7 +136,7 @@ router.get("/images/:id/edit", isAuthorized, async (req, res) => {
     console.log(image)
     // render the edit page
     res.render("edit", { image })
-})
+});
 
 // Update Image Router
 router.put("/images/:id", isAuthorized, async (req, res) => {

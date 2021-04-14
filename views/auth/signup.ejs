@@ -7,12 +7,14 @@
     <!-- THE HEADER TAG PARTIAL -->
     <%- include("../partials/header") %>
     <main>
-      <h1>User Signup</h1>
+      <h1 class="user-signup">User Signup</h1>
+      <div class="signup-center">
       <form action="/auth/signup" method="post">
         <input type="text" placeholder="username" name="username" />
         <input type="password" placeholder="password" name="password" />
         <input type="submit" value="sign up" />
       </form>
+    </div>
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("../partials/footer") %>
